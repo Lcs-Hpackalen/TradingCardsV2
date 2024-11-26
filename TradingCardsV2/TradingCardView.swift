@@ -7,17 +7,13 @@
 
 import SwiftUI
 
-struct HockeyPlayer{
-    let position: String
-    let shoots: String
-    let points: Int
-    let TOI: String
-    let signature = ("player signature")
-    let signatureview: Image
-}
-let mitchMarner = HockeyPlayer(position: "Winger", shoots: "Right", points: 85, TOI: "21:17", signatureview: Image(systemName: "mitchsignature"))
+
 
 struct HockeyCard: View {
+    //Mark: stored properties
+    let providedPlayer: HockeyPlayer
+    
+    //Mrak: computed properties
     var body: some View {
         VStack{
             ZStack{
@@ -35,10 +31,10 @@ struct HockeyCard: View {
                     .blur(radius: 5)
                 VStack{
                     Text("Mitch Marner")
-                        .padding(EdgeInsets(top: 60, leading: 0, bottom: 0, trailing: 0))
+                        .padding(EdgeInsets(top:60, leading: 0, bottom: 0, trailing: 0))
                         .font(.title)
                         .colorScheme(.light)
-                    Image(.mitchview)
+                    Image(.mitchView)
                         .resizable()
                         .frame(width: 300, height: 440)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 60, trailing: 0))
@@ -71,7 +67,7 @@ struct HockeyCard: View {
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
                     Text("Player signature")
                         .fontWeight(.bold)
-                    Image(.signatureview)
+                    Image("\(providedPlayer.signatureview)")
                         .resizable()
                         .border(Color.blue, width: 5)
                 }
@@ -85,7 +81,8 @@ struct HockeyCard: View {
                         Text("Fun Fact")
                             .font(.title)
                             .fontWeight(.bold)
-                        Text("Marner was the second player (after Brad Richards in 2000) ever to win a Memorial Cup, a Stafford Smythe Memorial Trophy, CHL Player of the Year, a league MVP trophy (Red Tilson Trophy) and a league playoff MVP trophy (Wayne Gretzky 99 Award) in the same season.")
+                        Text("\(providedPlayer.funFact)")
+                        Spacer()
                     }
                 }
             }
@@ -94,6 +91,6 @@ struct HockeyCard: View {
 }
 
 #Preview {
-    HockeyCard()
+    HockeyCard(providedPlayer: mitchMarner)
 }
 
