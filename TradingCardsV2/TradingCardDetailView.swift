@@ -11,7 +11,7 @@ import SwiftUI
 
 struct HockeyCard: View {
     //Mark: stored properties
-    let providedPlayer: HockeyPlayer
+    let currentPlayer: HockeyPlayer
     
     //Mrak: computed properties
     var body: some View {
@@ -23,27 +23,41 @@ struct HockeyCard: View {
                     .padding(EdgeInsets(top: 0, leading: 1, bottom: 0, trailing: 1))
                 Color
                     .white
-                    .frame(width: 360, height: 460)
+                    .frame(width: 330, height: 460)
                     .blur(radius: 5)
                 Color
                     .blue
-                    .frame(width: 330, height: 420)
+                    .frame(width: 280, height: 400)
                     .blur(radius: 5)
                 VStack{
-                    Text("\(.providedPlayer.playerName)")
+                    Text(currentPlayer.playerName)
                         .padding(EdgeInsets(top:60, leading: 0, bottom: 0, trailing: 0))
                         .font(.title)
                         .colorScheme(.light)
-                    Image(providedPlayer.playerPicture)
-                        .resizable()
-                        .frame(width: 300, height: 440)
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 60, trailing: 0))
+                    ZStack{
+                        Image(currentPlayer.playerPicture)
+                            .resizable()
+                            .frame(width: 300, height: 440)
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
+                        HStack{
+                            Spacer()
+                            VStack{
+                                Spacer()
+                                Spacer()
+                                Spacer()
+                                Image(.leafLogo)
+                                    .resizable()
+                                    .frame(width: 170, height: 170)
+                            }
+                            Spacer()
+                        }
+                    }
                 }
                 HStack{
                     Spacer(minLength: 100)
                     VStack{
                         Spacer()
-                        Text("\(providedPlayer.playernumber)")
+                        Text(currentPlayer.playernumber)
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(.black)
@@ -53,19 +67,19 @@ struct HockeyCard: View {
             }
             Text("Toronto MapleLeafs")
                 .font(.title).fontWeight(.bold)
-                .padding(EdgeInsets(top: 0, leading: 0, bottom:0, trailing: 100))
             HStack{
                 VStack{
-                    dataStruct(dataToShow: "Position:", dataValue: "\(providedPlayer.position)")
-                    dataStruct(dataToShow: "Shoots:", dataValue: "\(providedPlayer.shoots)")
-                    dataStruct(dataToShow: "Points:", dataValue: "\(.providedPlayer.points)")
-                    dataStruct(dataToShow: "TOI:", dataValue:" \(providedPlayer.TOI)")
+                    DataStruct(dataToShow:"Position:", dataValue: "\(currentPlayer.position)")
+                    DataStruct(dataToShow: "Shoots:", dataValue: "\(currentPlayer.shoots)")
+                    DataStruct(dataToShow: "Points:", dataValue: "\(currentPlayer.points)")
+                    DataStruct(dataToShow: "TOI:", dataValue:" \(currentPlayer.TOI)")
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
                     Text("Player signature")
                         .fontWeight(.bold)
-                    Image("\(providedPlayer.signatureview)")
+                    Image(currentPlayer.signatureview)
                         .resizable()
-                        .border(Color.blue, width: 5)
+                        .frame(width:170, height: 80)
+                        .border(Color.blue, width: 3)
                 }
                 ZStack{
                     RoundedRectangle(cornerRadius: 30)
@@ -77,7 +91,7 @@ struct HockeyCard: View {
                         Text("Fun Fact")
                             .font(.title)
                             .fontWeight(.bold)
-                        Text("\(providedPlayer.funFact)")
+                        Text("\(currentPlayer.funFact)")
                         Spacer()
                     }
                 }
@@ -87,17 +101,8 @@ struct HockeyCard: View {
 }
 
 #Preview {
-    HockeyCard(providedPlayer: mitchMarner)
+    HockeyCard(currentPlayer: mitchMarner)
 }
 
 
-struct ExtractedView: View {
-    var body: some View {
-        HStack{
-            Text("Position:")
-                .fontWeight(.bold)
-            Text(providedPlayer.position)
-                .fontWeight(.semibold)
-        }
-    }
-}
+

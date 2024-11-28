@@ -6,17 +6,18 @@
 //
 import SwiftUI
 
-struct dataStruct {
+struct DataStruct: View {
     //Mark: stored properties
     let dataToShow: String
     let dataValue: String
     //Mark: computed properties
-    var body : some View {
+    var body: some View {
         HStack() {
             Text(dataToShow)
                 .fontWeight(.bold)
             Text(dataValue)
                 .fontWeight(.semibold)
+            Spacer()
         }
     }
 }
