@@ -30,7 +30,7 @@ struct HockeyCard: View {
                     .frame(width: 330, height: 420)
                     .blur(radius: 5)
                 VStack{
-                    Text("Mitch Marner")
+                    Text("\(.providedPlayer.playerName)")
                         .padding(EdgeInsets(top:60, leading: 0, bottom: 0, trailing: 0))
                         .font(.title)
                         .colorScheme(.light)
@@ -43,7 +43,7 @@ struct HockeyCard: View {
                     Spacer(minLength: 100)
                     VStack{
                         Spacer()
-                        Text("#16")
+                        Text("\(providedPlayer.playernumber)")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(.black)
@@ -56,14 +56,10 @@ struct HockeyCard: View {
                 .padding(EdgeInsets(top: 0, leading: 0, bottom:0, trailing: 100))
             HStack{
                 VStack{
-                    Text("Position: Winger")
-                        .fontWeight(.bold)
-                    Text("Shoots: Right")
-                        .fontWeight(.bold)
-                    Text("Points 23/24: 85")
-                        .fontWeight(.bold)
-                    Text ("TOI: 21:17")
-                        .fontWeight(.bold)
+                    dataStruct(dataToShow: "Position:", dataValue: "\(providedPlayer.position)")
+                    dataStruct(dataToShow: "Shoots:", dataValue: "\(providedPlayer.shoots)")
+                    dataStruct(dataToShow: "Points:", dataValue: "\(.providedPlayer.points)")
+                    dataStruct(dataToShow: "TOI:", dataValue:" \(providedPlayer.TOI)")
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
                     Text("Player signature")
                         .fontWeight(.bold)
@@ -94,3 +90,14 @@ struct HockeyCard: View {
     HockeyCard(providedPlayer: mitchMarner)
 }
 
+
+struct ExtractedView: View {
+    var body: some View {
+        HStack{
+            Text("Position:")
+                .fontWeight(.bold)
+            Text(providedPlayer.position)
+                .fontWeight(.semibold)
+        }
+    }
+}
