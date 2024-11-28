@@ -17,6 +17,7 @@ struct dataStruct {
                 .fontWeight(.bold)
             Text(dataValue)
                 .fontWeight(.semibold)
+            Spacer()
         }
     }
 }
