@@ -28,7 +28,7 @@ struct HockeyCard: View {
                 Color
                     .burgundy
                     .frame(width: 280, height: 400)
-                    .blur(radius: 5)
+                    .blur(radius: 7)
                 VStack{
                     Text(currentPlayer.playerName)
                         .padding(EdgeInsets(top:60, leading: 0, bottom: 0, trailing: 0))
@@ -45,7 +45,7 @@ struct HockeyCard: View {
                                 Spacer()
                                 Spacer()
                                 Spacer()
-                                Image(.leafLogo)
+                                Image(.petesLogo)
                                     .resizable()
                                     .frame(width: 170, height: 170)
                             }
@@ -65,7 +65,7 @@ struct HockeyCard: View {
                     }
                 }
             }
-            Text("Toronto MapleLeafs")
+            Text("Peteborough Petes")
                 .font(.title).fontWeight(.bold)
             HStack{
                 VStack{
