@@ -9,13 +9,27 @@ import SwiftUI
 
 struct TradingCardView: View {
     //Mark:stored properties
+    let providedPlayer: HockeyPlayer
     
     //Mark:computed properties
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            HStack{
+                Image(providedPlayer.playerPicture)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 150, height: 150)
+                VStack(alignment: .leading){
+                    Text(providedPlayer.playerName)
+                        .font(.title)
+                }
+            }
+        }
+        
+            
+        }
     }
-}
 
 #Preview {
-    TradingCardView()
+    TradingCardView(providedPlayer: mitchMarner)
 }

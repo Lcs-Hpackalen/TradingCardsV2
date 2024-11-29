@@ -60,7 +60,7 @@ struct HockeyCard: View {
                         Text(currentPlayer.playernumber)
                             .font(.title)
                             .fontWeight(.bold)
-                            .foregroundColor(.black)
+                         .foregroundColor(.black)
                         Spacer()
                     }
                 }

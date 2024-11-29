@@ -27,5 +27,6 @@ let williamNylander = HockeyPlayer(playerName: "William Nylander", id: 3, positi
  
 let players = [
     mitchMarner,
- austonMathews
+ austonMathews,
+    williamNylander
 ]
