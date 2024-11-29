@@ -18,7 +18,7 @@ struct HockeyCard: View {
         VStack{
             ZStack{
                 Color
-                    .blue
+                    .black
                     .blur(radius: 10)
                     .padding(EdgeInsets(top: 0, leading: 1, bottom: 0, trailing: 1))
                 Color
@@ -26,7 +26,7 @@ struct HockeyCard: View {
                     .frame(width: 330, height: 460)
                     .blur(radius: 5)
                 Color
-                    .blue
+                    .burgundy
                     .frame(width: 280, height: 400)
                     .blur(radius: 5)
                 VStack{
@@ -60,7 +60,7 @@ struct HockeyCard: View {
                         Text(currentPlayer.playernumber)
                             .font(.title)
                             .fontWeight(.bold)
-                         .foregroundColor(.black)
+                            .foregroundColor(.red)
                         Spacer()
                     }
                 }
@@ -101,7 +101,7 @@ struct HockeyCard: View {
 }
 
 #Preview {
-    HockeyCard(currentPlayer: mitchMarner)
+    HockeyCard(currentPlayer: morganRielly     )
 }
 
 
