@@ -16,11 +16,12 @@ struct TradingCardView: View {
         NavigationStack{
             HStack{
                 ZStack{
-                    RoundedRectangle(cornerSize: 5)
-                    Color.blue
+                    RoundedRectangle(cornerRadius: 30)
+                        .frame(width: 200, height: 200)
+                        .blur(radius: 10)
+                        .foregroundStyle(.tint)
                     Image(providedPlayer.playerPicture)
                         .resizable()
-                        .scaledToFit()
                         .frame(width: 150, height: 150)
                 }
                     
