@@ -15,14 +15,21 @@ struct TradingCardView: View {
     var body: some View {
         NavigationStack{
             HStack{
-                Image(providedPlayer.playerPicture)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 150, height: 150)
+                ZStack{
+                    RoundedRectangle(cornerSize: 5)
+                    Color.blue
+                    Image(providedPlayer.playerPicture)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 150, height: 150)
+                }
+                    
                 VStack(alignment: .leading){
                     Text(providedPlayer.playerName)
-                        .font(.title)
+                        .font(.title).fontWeight(.bold)
                 }
+                Text (providedPlayer.playernumber)
+                    .font(.title2)
             }
         }
         
