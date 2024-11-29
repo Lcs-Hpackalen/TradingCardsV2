@@ -17,8 +17,7 @@ struct TradingCardView: View {
             HStack{
                 ZStack{
                     RoundedRectangle(cornerRadius: 30)
-                        .frame(width: 200, height: 200)
-                        .blur(radius: 10)
+                        .frame(width: 170, height: 200)
                         .foregroundStyle(.tint)
                     Image(providedPlayer.playerPicture)
                         .resizable()
