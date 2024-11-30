@@ -21,10 +21,12 @@ struct HockeyCard: View {
                     .black
                     .blur(radius: 10)
                     .scaledToFill()
+                    .overlay(Image(.petesLogo).resizable())
                 ZStack{
                     Color
                         .white
                         .blur(radius: 5)
+                        .padding()
                         .padding()
                     ZStack{
                         Ribbon()
@@ -38,10 +40,14 @@ struct HockeyCard: View {
                 ZStack{
                     Color
                         .burgundy
+                        .padding(.all)
+                        .padding()
                         .padding()
                         .blur(radius: 7)
                     Image(currentPlayer.playerPicture)
                         .resizable()
+                        .padding()
+                        .padding()
                         .padding()
                 }
                 HStack{
@@ -55,6 +61,16 @@ struct HockeyCard: View {
                             .padding(.trailing)
                         Spacer()
                     }
+                }
+                HStack{
+                    Spacer()
+                    VStack{
+                        Spacer()
+                        Spacer()
+                        Image(.petesLogo)
+                            .resizable()
+                    }
+                    Spacer()
                 }
             }
             ZStack{
