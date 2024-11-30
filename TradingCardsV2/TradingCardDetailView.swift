@@ -59,6 +59,7 @@ struct HockeyCard: View {
             }
             ZStack{
                 Ribbon()
+                    .clipped()
                 Text("Peteborough Petes")
                     .font(.title).fontWeight(.bold).foregroundStyle(.white)
             }
@@ -93,6 +94,7 @@ struct HockeyCard: View {
                 ZStack{
                     Circle()
                         .foregroundStyle(.black)
+                        .scaledToFill()
                     VStack{
                         Text("Fun Fact")
                             .font(.title)
