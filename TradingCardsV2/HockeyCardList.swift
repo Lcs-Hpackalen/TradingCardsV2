@@ -17,7 +17,7 @@ struct HockeyCardList: View {
                 } label: {TradingCardView(providedPlayer: currentHouse)
                 }
                 }
-            .navigationBarTitle("Tornoto Maple Leafs")
+                .navigationBarTitle("U15 AAA Petes")
             }
         }
     }

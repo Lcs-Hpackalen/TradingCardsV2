@@ -18,7 +18,9 @@ struct TradingCardView: View {
                 ZStack{
                     RoundedRectangle(cornerRadius: 30)
                         .frame(width: 120, height: 150)
-                        .foregroundStyle(.tint)
+                    RoundedRectangle(cornerRadius: 30)
+                        .frame(width: 100, height: 130)
+                        .foregroundStyle(.burgundy)
                     Image(providedPlayer.playerPicture)
                         .resizable()
                         .frame(width: 100, height: 100)
@@ -38,5 +40,5 @@ struct TradingCardView: View {
     }
 
 #Preview {
-    TradingCardView(providedPlayer: mitchMarner)
+    TradingCardView(providedPlayer: hannuPackalen)
 }
