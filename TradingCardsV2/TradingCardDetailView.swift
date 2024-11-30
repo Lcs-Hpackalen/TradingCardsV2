@@ -27,7 +27,7 @@ struct HockeyCard: View {
                     .padding(EdgeInsets(top: 40, leading: 40, bottom: 40, trailing: 40))
                     .blur(radius: 5)
                     Text(currentPlayer.playerName)
-                        
+                        .padding(EdgeInsets(top: 40,leading:0,bottom:0,trailing:0))
                         .font(.title)
                         .colorScheme(.light)
                 }
