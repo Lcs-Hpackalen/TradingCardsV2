@@ -17,24 +17,20 @@ struct TradingCardView: View {
             HStack{
                 ZStack{
                     RoundedRectangle(cornerRadius: 30)
-                        .frame(width: 120, height: 150)
                     RoundedRectangle(cornerRadius: 30)
-                        .frame(width: 100, height: 130)
+                        .padding(EdgeInsets(top: 50, leading: 50, bottom: 50, trailing: 50))
                         .foregroundStyle(.burgundy)
                     Image(providedPlayer.playerPicture)
                         .resizable()
-                        .frame(width: 100, height: 100)
+                    .padding(EdgeInsets(top: 50, leading: 50, bottom: 50, trailing: 50))
                 }
-                    
-                VStack(alignment: .leading){
                     Text(providedPlayer.playerName)
                         .font(.title).fontWeight(.bold)
-                }
                 Text (providedPlayer.playernumber)
                     .font(.title2)
             }
         }
-        
+        .frame(height:300)
             
         }
     }
