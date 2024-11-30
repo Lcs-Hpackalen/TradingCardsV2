@@ -33,7 +33,9 @@ let morganRielly = HockeyPlayer(playerName: "Morgan Reilly", id: 5, position: "D
 
 let blakeBrioux = HockeyPlayer(playerName: "Blake Brioux", id: 6, position: "Right Winger", playernumber: "#5", shoots: "Right", points: 14, TOI: "11:28", signatureview: "blakeSignature", playerPicture: "blakeView", funFact: "He likes to ride snowmobiles and four wheelers.")
 
-let hannuPackalen = HockeyPlayer(playerName: "Hannu Packalen", id: 7, position: "Center", playernumber: "#26", shoots: "Right", points: 4 , TOI: "10:24", signatureview: "hannuSignature", playerPicture: "hannuView", funFact: "Transfered from kingston to peteborough to join the team this year.")
+let hannuPackalen = HockeyPlayer(playerName: "Hannu Packalen", id: 7, position: "Center", playernumber: "#26", shoots: "Right", points: 4 , TOI: "10:24", signatureview: "hannuSignature", playerPicture: "hannuView", funFact: """
+                                 Transfered from kingston to peteborough to join the team this year.
+                                 """)
 let players = [
     mitchMarner,
  austonMathews,

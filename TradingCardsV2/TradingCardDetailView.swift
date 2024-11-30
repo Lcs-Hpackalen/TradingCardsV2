@@ -78,37 +78,33 @@ struct HockeyCard: View {
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
                 ZStack{
                     RoundedRectangle(cornerRadius: 30)
-                        .foregroundStyle(.burgundy)
-                    RoundedRectangle(cornerRadius: 30)
                         .foregroundStyle(.black)
+                    RoundedRectangle(cornerRadius: 30)
+                        .foregroundStyle(.burgundy)
                         .rotationEffect(Angle(degrees: -4))
                     VStack{
                         Text("Player signature")
                             .fontWeight(.bold)
                             .foregroundStyle(.white)
                         ZStack{
-                            Rectangle()
-                                .frame(width:170, height: 80)
-                                .foregroundStyle(.white)
                             Image(currentPlayer.signatureview)
                                 .resizable()
-                                .frame(width:170, height: 80)
                                 .border(Color.black, width: 3)
                         }
                     }
                 }
             }
             ZStack{
-                RoundedRectangle(cornerRadius: 30)
-                    .foregroundStyle(.burgundy)
+                Circle()
+                    .foregroundStyle(.black)
                 VStack{
                     Text("Fun Fact")
                         .font(.title)
                         .fontWeight(.bold)
+                        .foregroundStyle(.burgundy)
                     
                     Text("\(currentPlayer.funFact)")
                         .foregroundStyle(.white)
-                    Spacer()
                 }
             }
         }
