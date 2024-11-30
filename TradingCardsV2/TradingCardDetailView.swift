@@ -50,7 +50,7 @@ struct HockeyCard: View {
                         Spacer()
                         Image(.petesLogo)
                             .resizable()
-                            .frame(width: 170, height: 170)
+                            .frame(width: 240, height: 150)
                     }
                     Spacer()
                 }
@@ -88,9 +88,15 @@ struct HockeyCard: View {
             ZStack{
                 RoundedRectangle(cornerRadius: 30)
                     .frame(width: 220, height: 280)
-                    .blur(radius: 10)
                     .foregroundStyle(.burgundy)
-                    .border(.black, width: 5)
+                RoundedRectangle(cornerRadius: 30)
+                    .frame(width: 220, height: 280)
+                    .foregroundStyle(.black)
+                    .rotationEffect(.degrees(-10))
+                RoundedRectangle(cornerRadius: 30)
+                    .frame(width: 220, height: 280)
+                    .foregroundStyle(.burgundy)
+                    .rotationEffect(.degrees(-20))
                 VStack{
                     Text("Fun Fact")
                         .font(.title)
