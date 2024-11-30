@@ -74,8 +74,11 @@ struct HockeyCard: View {
                         RoundedRectangle(cornerRadius: 30)
                             .foregroundStyle(.black)
                         RoundedRectangle(cornerRadius: 30)
+                            .foregroundStyle(.white)
+                            .rotationEffect(Angle(degrees: -5))
+                        RoundedRectangle(cornerRadius: 30)
                             .foregroundStyle(.burgundy)
-                            .rotationEffect(Angle(degrees: -4))
+                            .rotationEffect(Angle(degrees: -10))
                         VStack{
                             Text("Player signature")
                                 .fontWeight(.bold)
@@ -83,7 +86,6 @@ struct HockeyCard: View {
                             ZStack{
                                 Image(currentPlayer.signatureview)
                                     .resizable()
-                                    .border(Color.black, width: 3)
                             }
                         }
                     }

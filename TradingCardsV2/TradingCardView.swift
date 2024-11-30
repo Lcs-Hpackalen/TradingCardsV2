@@ -17,24 +17,33 @@ struct TradingCardView: View {
             HStack{
                 ZStack{
                     RoundedRectangle(cornerRadius: 30)
+                        .scaledToFit()
                     RoundedRectangle(cornerRadius: 30)
-                        .padding(EdgeInsets(top: 50, leading: 50, bottom: 50, trailing: 50))
+                        .padding()
                         .foregroundStyle(.burgundy)
+                        .scaledToFit()
                     Image(providedPlayer.playerPicture)
                         .resizable()
-                    .padding(EdgeInsets(top: 50, leading: 50, bottom: 50, trailing: 50))
+                        .scaledToFit()
+                    .padding()
                 }
-                    Text(providedPlayer.playerName)
-                        .font(.title).fontWeight(.bold)
-                Text (providedPlayer.playernumber)
-                    .font(.title2)
+                ZStack{
+                    Ribbon()
+                        .foregroundStyle(.burgundy)
+                    HStack{
+                        Text(providedPlayer.playerName)
+                            .font(.title).fontWeight(.bold)
+                        Text (providedPlayer.playernumber)
+                            .font(.title2)
+                    }
+                    .padding()
+                }
             }
         }
-        .frame(height:300)
-            
         }
     }
 
 #Preview {
     TradingCardView(providedPlayer: hannuPackalen)
+        .padding()
 }
