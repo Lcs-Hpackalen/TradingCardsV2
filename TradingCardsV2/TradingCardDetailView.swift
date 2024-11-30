@@ -38,7 +38,7 @@ struct HockeyCard: View {
                         Image(currentPlayer.playerPicture)
                             .resizable()
                             .frame(width: 300, height: 440)
-                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0))
                         HStack{
                             Spacer()
                             VStack{
@@ -61,6 +61,7 @@ struct HockeyCard: View {
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(.red)
+                            .padding(.trailing)
                         Spacer()
                     }
                 }
@@ -79,14 +80,14 @@ struct HockeyCard: View {
                     Image(currentPlayer.signatureview)
                         .resizable()
                         .frame(width:170, height: 80)
-                        .border(Color.blue, width: 3)
+                        .border(Color.black, width: 3)
                 }
                 ZStack{
                     RoundedRectangle(cornerRadius: 30)
                         .frame(width: 220, height: 280)
                         .blur(radius: 10)
-                        .foregroundStyle(.tint)
-                        .border(.black, width: 3)
+                        .foregroundStyle(.burgundy)
+                        .border(.black, width: 5)
                     VStack{
                         Text("Fun Fact")
                             .font(.title)
@@ -101,7 +102,7 @@ struct HockeyCard: View {
 }
 
 #Preview {
-    HockeyCard(currentPlayer: morganRielly     )
+    HockeyCard(currentPlayer: hannuPackalen)
 }
 
 
