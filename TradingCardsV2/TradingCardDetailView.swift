@@ -20,27 +20,25 @@ struct HockeyCard: View {
                 Color
                     .black
                     .blur(radius: 10)
-                    .frame(width: 400, height: 520)
                     .scaledToFill()
                 ZStack(alignment: .top){
                 Color
                     .white
-                    .frame(width: 330, height: 440)
+                    .padding(EdgeInsets(top: 40, leading: 40, bottom: 40, trailing: 40))
                     .blur(radius: 5)
                     Text(currentPlayer.playerName)
-                        .padding(EdgeInsets(top:60, leading: 0, bottom: 0, trailing: 0))
+                        
                         .font(.title)
                         .colorScheme(.light)
                 }
                     ZStack{
                         Color
                             .burgundy
-                            .frame(width: 290, height: 400)
+                            .padding(EdgeInsets(top: 80, leading: 80, bottom: 80, trailing: 80))
                             .blur(radius: 7)
                         Image(currentPlayer.playerPicture)
                             .resizable()
-                            .frame(width: 290, height: 420)
-                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0))
+                            .padding(EdgeInsets(top: 80, leading: 80, bottom: 80, trailing: 80))
                     }
                 HStack{
                     Spacer()
@@ -50,7 +48,7 @@ struct HockeyCard: View {
                         Spacer()
                         Image(.petesLogo)
                             .resizable()
-                            .frame(width: 240, height: 150)
+                            .padding(EdgeInsets(top: 700, leading: 130, bottom: 0, trailing: 130))
                     }
                     Spacer()
                 }
@@ -78,25 +76,31 @@ struct HockeyCard: View {
                 DataStruct(dataToShow: "Points:", dataValue: "\(currentPlayer.points)")
                 DataStruct(dataToShow: "TOI:", dataValue:" \(currentPlayer.TOI)")
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
-                Text("Player signature")
-                    .fontWeight(.bold)
-                Image(currentPlayer.signatureview)
-                    .resizable()
-                    .frame(width:170, height: 80)
-                    .border(Color.black, width: 3)
+                ZStack{
+                    RoundedRectangle(cornerRadius: 30)
+                        .foregroundStyle(.burgundy)
+                    RoundedRectangle(cornerRadius: 30)
+                        .foregroundStyle(.black)
+                        .rotationEffect(Angle(degrees: -4))
+                    VStack{
+                        Text("Player signature")
+                            .fontWeight(.bold)
+                            .foregroundStyle(.white)
+                        ZStack{
+                            Rectangle()
+                                .frame(width:170, height: 80)
+                                .foregroundStyle(.white)
+                            Image(currentPlayer.signatureview)
+                                .resizable()
+                                .frame(width:170, height: 80)
+                                .border(Color.black, width: 3)
+                        }
+                    }
+                }
             }
             ZStack{
                 RoundedRectangle(cornerRadius: 30)
-                    .frame(width: 220, height: 280)
                     .foregroundStyle(.burgundy)
-                RoundedRectangle(cornerRadius: 30)
-                    .frame(width: 220, height: 280)
-                    .foregroundStyle(.black)
-                    .rotationEffect(.degrees(-10))
-                RoundedRectangle(cornerRadius: 30)
-                    .frame(width: 220, height: 280)
-                    .foregroundStyle(.burgundy)
-                    .rotationEffect(.degrees(-20))
                 VStack{
                     Text("Fun Fact")
                         .font(.title)
