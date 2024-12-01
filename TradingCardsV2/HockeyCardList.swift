@@ -16,9 +16,10 @@ struct HockeyCardList: View {
                     HockeyCard(currentPlayer: currentHouse)
                 } label: {TradingCardView(providedPlayer: currentHouse)
                 }
-                }
-                .navigationBarTitle("U15 AAA Petes")
             }
+            .navigationTitle("U15 AAA Petes")
+            .font(.title).fontWeight(.bold)
+        }
         }
     }
 

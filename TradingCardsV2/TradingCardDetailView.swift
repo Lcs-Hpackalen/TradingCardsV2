@@ -36,17 +36,15 @@ struct HockeyCard: View {
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
-                            .padding()
-                            .padding()
-                            .padding()
                         Text(currentPlayer.playerLastName)
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
-                            .padding()
-                            .padding()
-                            .padding()
+                            
                     }
+                    .padding(.top)
+                    .padding(.top)
+                    .padding(.top)
                     }
                 ZStack{
                     Color
