@@ -67,11 +67,11 @@ struct HockeyCard: View {
                     Spacer(minLength: 100)
                     VStack{
                         Spacer()
-                        Text(currentPlayer.playernumber)
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(.blue)
-                            .padding(.trailing)
+                            Text(currentPlayer.playernumber)
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(.blue)
+                                .padding(.trailing)
                         Spacer()
                     }
                 }
@@ -131,17 +131,18 @@ struct HockeyCard: View {
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
                     ZStack{
                         RoundedRectangle(cornerRadius: 30)
-                            .foregroundStyle(.black)
+                            .foregroundStyle(.burgundy)
                         RoundedRectangle(cornerRadius: 30)
-                            .foregroundStyle(.white)
-                            .rotationEffect(Angle(degrees: -5))
+                            .foregroundStyle(.black)
+                            .rotationEffect(Angle(degrees: -7))
                         RoundedRectangle(cornerRadius: 30)
                             .foregroundStyle(.burgundy)
-                            .rotationEffect(Angle(degrees: -10))
+                            .rotationEffect(Angle(degrees: -14))
                         VStack{
                             Text("Player signature")
                                 .fontWeight(.bold)
                                 .foregroundStyle(.white)
+                                .padding()
                             ZStack{
                                 Image(currentPlayer.signatureview)
                                     .resizable()
