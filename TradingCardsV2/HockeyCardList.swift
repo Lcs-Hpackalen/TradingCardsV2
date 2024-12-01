@@ -18,7 +18,6 @@ struct HockeyCardList: View {
                 }
             }
             .navigationTitle("U15 AAA Petes")
-            .font(.title).fontWeight(.bold)
         }
         }
     }
