@@ -34,12 +34,11 @@ struct TradingCardView: View {
                         .padding(.top)
                     .scaledToFit()
                 }
-                    HStack{
                         VStack{
                             Text(providedPlayer.playerFirstName)
                                 .font(.title).fontWeight(.bold)
-                            Text(providedPlayer.pleyerLastName)
-                        }
+                            Text(providedPlayer.playerLastName)
+                                .font(.title).fontWeight(.bold)
                         Text (providedPlayer.playernumber)
                             .font(.title2)
                     }

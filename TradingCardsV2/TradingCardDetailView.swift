@@ -39,7 +39,7 @@ struct HockeyCard: View {
                             .padding()
                             .padding()
                             .padding()
-                        Text(currentPlayer.pleyerLastName)
+                        Text(currentPlayer.playerLastName)
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
