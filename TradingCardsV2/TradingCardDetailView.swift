@@ -17,38 +17,44 @@ struct HockeyCard: View {
     var body: some View {
         VStack{
             ZStack{
-                Color
-                    .black
-                    .blur(radius: 10)
-                    .scaledToFill()
-                    .overlay(Image(.petesLogo).resizable())
-                ZStack{
+                    Color
+                        .black
+                        .frame(height:520)
+                        .blur(radius: 10)
+                        .scaledToFill()
+                ZStack(alignment: .top){
                     Color
                         .white
                         .blur(radius: 5)
                         .padding()
                         .padding()
-                    ZStack{
-                        Ribbon()
-                        Text(currentPlayer.playerName)
-                            .padding()
-                            .font(.title)
-                            .colorScheme(.light)
+                    Ribbon()
+                        .padding()
+                        .padding()
+                Text(currentPlayer.playerName)
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding()
+                        .padding()
+                        .padding()
                     }
-                    .padding()
-                }
                 ZStack{
                     Color
                         .burgundy
                         .padding(.all)
                         .padding()
                         .padding()
+                        .padding(.top)
+                        .padding(.top)
+                        .padding(.top)
                         .blur(radius: 7)
                     Image(currentPlayer.playerPicture)
                         .resizable()
                         .padding()
                         .padding()
                         .padding()
+                        .padding(.top)
                 }
                 HStack{
                     Spacer(minLength: 100)
@@ -66,20 +72,49 @@ struct HockeyCard: View {
                     Spacer()
                     VStack{
                         Spacer()
-                        Spacer()
                         Image(.petesLogo)
                             .resizable()
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.top)
+                            .padding(.leading)
+                            .padding(.trailing)
+                            .padding(.leading)
+                            .padding(.trailing)
+                            .padding(.leading)
+                            .padding(.trailing)
+                            .padding(.leading)
+                            .padding(.trailing)
+                            .padding(.leading)
+                            .padding(.trailing)
+                            .padding(.leading)
+                            .padding(.trailing)
                     }
-                    Spacer()
                 }
             }
-            ZStack{
-                Ribbon()
-                    .clipped()
-                Text("Peteborough Petes")
-                    .font(.title).fontWeight(.bold).foregroundStyle(.white)
-            }
-            
             HStack{
                 VStack{
                     DataStruct(dataToShow:"Position:", dataValue: "\(currentPlayer.position)")
@@ -108,17 +143,29 @@ struct HockeyCard: View {
                     }
                 }
                 ZStack{
-                    Circle()
-                        .foregroundStyle(.black)
-                        .scaledToFill()
                     VStack{
-                        Text("Fun Fact")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundStyle(.burgundy)
-                        
-                        Text("\(currentPlayer.funFact)")
-                            .foregroundStyle(.white)
+                        ZStack{
+                            Capsule()
+                                .foregroundStyle(.burgundy)
+                            Text("U15 AAA PETES")
+                                .font(.title)
+                        }
+                        RoundedRectangle(cornerRadius: 30)
+                            .blur(radius: 10)
+                            .border(Color.burgundy, width: 5)
+                            .scaledToFill()
+                            .ignoresSafeArea()
+                    }
+                        .foregroundStyle(.black)
+                        VStack{
+                            Text("Fun Fact")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundStyle(.burgundy)
+                            
+                            Text("\(currentPlayer.funFact)")
+                                .foregroundStyle(.white)
+                                .padding(.leading)
                     }
                 }
             }

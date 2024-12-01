@@ -18,23 +18,33 @@ struct TradingCardView: View {
                 ZStack{
                     RoundedRectangle(cornerRadius: 30)
                         .scaledToFit()
+                        .padding(.trailing)
                     RoundedRectangle(cornerRadius: 30)
                         .padding()
                         .foregroundStyle(.burgundy)
                         .scaledToFit()
+                        .padding(.trailing)
                     Image(providedPlayer.playerPicture)
                         .resizable()
                         .scaledToFit()
                     .padding()
+                    .padding()
+                    .padding()
                 }
                 ZStack{
-                    Ribbon()
+                    VStack{
+                        Spacer()
+                        Spacer()
+                        Ribbon()
+                    }
                         .foregroundStyle(.burgundy)
                     HStack{
                         Text(providedPlayer.playerName)
                             .font(.title).fontWeight(.bold)
+                            .scaledToFill()
                         Text (providedPlayer.playernumber)
                             .font(.title2)
+                            .scaledToFill()
                     }
                     .padding()
                 }
