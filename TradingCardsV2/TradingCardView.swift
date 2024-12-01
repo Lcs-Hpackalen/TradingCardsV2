@@ -13,42 +13,37 @@ struct TradingCardView: View {
     
     //Mark:computed properties
     var body: some View {
-        NavigationStack{
             HStack{
                 ZStack{
-                    RoundedRectangle(cornerRadius: 30)
+                    RoundedRectangle(cornerRadius: 15)
                         .scaledToFit()
+                        .foregroundStyle(.black)
                         .padding(.trailing)
-                    RoundedRectangle(cornerRadius: 30)
+                    RoundedRectangle(cornerRadius: 15)
                         .padding()
                         .foregroundStyle(.burgundy)
-                        .scaledToFit()
                         .padding(.trailing)
+                        .scaledToFit()
                     Image(providedPlayer.playerPicture)
                         .resizable()
-                        .scaledToFit()
-                    .padding()
-                    .padding()
-                    .padding()
+                        .padding()
+                        .padding()
+                        .padding()
+                        .padding(.trailing)
+                        .padding(.bottom)
+                        .padding(.top)
+                    .scaledToFit()
                 }
-                ZStack{
-                    VStack{
-                        Spacer()
-                        Spacer()
-                        Ribbon()
-                    }
-                        .foregroundStyle(.burgundy)
                     HStack{
-                        Text(providedPlayer.playerName)
-                            .font(.title).fontWeight(.bold)
-                            .scaledToFill()
+                        VStack{
+                            Text(providedPlayer.playerFirstName)
+                                .font(.title).fontWeight(.bold)
+                            Text(providedPlayer.pleyerLastName)
+                        }
                         Text (providedPlayer.playernumber)
                             .font(.title2)
-                            .scaledToFill()
                     }
                     .padding()
-                }
-            }
         }
         }
     }

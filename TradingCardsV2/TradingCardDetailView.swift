@@ -31,13 +31,22 @@ struct HockeyCard: View {
                     Ribbon()
                         .padding()
                         .padding()
-                Text(currentPlayer.playerName)
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding()
-                        .padding()
-                        .padding()
+                    HStack{
+                        Text(currentPlayer.playerFirstName)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding()
+                            .padding()
+                            .padding()
+                        Text(currentPlayer.pleyerLastName)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding()
+                            .padding()
+                            .padding()
+                    }
                     }
                 ZStack{
                     Color
@@ -63,7 +72,7 @@ struct HockeyCard: View {
                         Text(currentPlayer.playernumber)
                             .font(.title)
                             .fontWeight(.bold)
-                            .foregroundColor(.red)
+                            .foregroundColor(.blue)
                             .padding(.trailing)
                         Spacer()
                     }
@@ -152,7 +161,6 @@ struct HockeyCard: View {
                         }
                         RoundedRectangle(cornerRadius: 30)
                             .blur(radius: 10)
-                            .border(Color.burgundy, width: 5)
                             .scaledToFill()
                             .ignoresSafeArea()
                     }
