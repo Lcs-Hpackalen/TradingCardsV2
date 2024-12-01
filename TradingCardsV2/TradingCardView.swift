@@ -36,9 +36,9 @@ struct TradingCardView: View {
                 }
                         VStack{
                             Text(providedPlayer.playerFirstName)
-                                .font(.title).fontWeight(.bold)
+                                .font(.title)
                             Text(providedPlayer.playerLastName)
-                                .font(.title).fontWeight(.bold)
+                                .font(.title)
                         Text (providedPlayer.playernumber)
                             .font(.title2)
                     }
